@@ -8,16 +8,16 @@ use alloc::vec::Vec;
 
 extern crate common;
 use common::bytesrepr::ToBytes;
-use common::contract_api::{call_contract, new_uref};
 use common::contract_api::pointers::ContractPointer;
+use common::contract_api::{call_contract, new_uref};
 use common::value::Value;
 
 #[no_mangle]
 pub extern "C" fn call() {
-    //This hash comes from blake2b256( [0;32] ++ [0;8] ++ [0;4] )
+    // This hash comes from a hash of address=[48; 32]; nonce=2; fn_store_id=0
     let hash = ContractPointer::Hash([
-        164, 102, 153, 51, 236, 214, 169, 167, 126, 44, 250, 247, 179, 214, 203, 229, 239, 69, 145,
-        25, 5, 153, 113, 55, 255, 188, 176, 201, 7, 4, 42, 100,
+        141, 28, 213, 149, 230, 231, 61, 223, 143, 211, 37, 248, 146, 126, 101, 96, 197, 73, 164,
+        185, 147, 226, 1, 127, 25, 96, 126, 228, 231, 147, 193, 252,
     ]);
     let arg = "World";
     let result: String = call_contract(hash, &arg, &Vec::new());
