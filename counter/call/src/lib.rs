@@ -14,8 +14,8 @@ use common::contract_api::pointers::ContractPointer;
 pub extern "C" fn call() {
     // This hash comes from a hash of address=[48; 32]; nonce=3; fn_store_id=0
     let hash = ContractPointer::Hash([
-        141, 28, 213, 149, 230, 231, 61, 223, 143, 211, 37, 248, 146, 126, 101, 96, 197, 73, 164,
-        185, 147, 226, 1, 127, 25, 96, 126, 228, 231, 147, 193, 252,
+        245, 250, 252, 78, 217, 1, 125, 208, 254, 74, 122, 141, 168, 215, 37, 40, 30, 168, 234, 6,
+        133, 205, 117, 189, 86, 86, 186, 31, 59, 216, 223, 123,
     ]);
     let arg = "inc";
     let _result: () = call_contract(hash.clone(), &arg, &Vec::new());
